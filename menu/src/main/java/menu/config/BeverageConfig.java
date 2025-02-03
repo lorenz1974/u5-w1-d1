@@ -35,7 +35,37 @@ public class BeverageConfig {
     }
 
     @Bean
+    public Beverage coffeeXL() {
+        return new Beverage("Coffee XL", 3.50, 5, true);
+    }
+
+    @Bean
+    public Beverage teaXL() {
+        return new Beverage("Tea XL", 2.50, 2, true);
+    }
+
+    @Bean
+    public Beverage juiceXL() {
+        return new Beverage("Juice XL", 4.00, 50, true);
+    }
+
+    @Bean
+    public Beverage waterXL() {
+        return new Beverage("Water XL", 1.50, 0, true);
+    }
+
+    @Bean
+    public Beverage sodaXL() {
+        return new Beverage("Soda XL", 3.00, 150, true);
+    }
+
+    @Bean
     public List<Beverage> getAllBeverages() {
         return Arrays.asList(this.coffee(), this.tea(), this.juice(), this.water(), this.soda());
+    }
+
+    @Bean
+    public List<Beverage> getAllXLBeverages() {
+        return Arrays.asList(this.coffeeXL(), this.teaXL(), this.juiceXL(), this.waterXL(), this.sodaXL());
     }
 }

@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import menu.entity.*;
 
-import menu.config.*;
-
 @Configuration
 public class MenuConfig {
 
@@ -33,8 +31,8 @@ public class MenuConfig {
     public Menu xlMenu() {
         Menu menu = new Menu();
         menu.setPizzas(pizzaConfig.getAllXLPizzas());
-        menu.setToppings(toppingConfig.getAllToppings());
-        menu.setBeverages(beverageConfig.getAllBeverages());
+        menu.setToppings(toppingConfig.getAllXLToppings());
+        menu.setBeverages(beverageConfig.getAllXLBeverages());
         return menu;
     }
 

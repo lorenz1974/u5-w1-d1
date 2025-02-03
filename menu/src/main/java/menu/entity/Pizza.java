@@ -23,9 +23,9 @@ public class Pizza implements PriceAndCalories {
 
     public void setCalories() {
         if (isXL) {
-            this.calories = (toppings.stream().mapToInt(Topping::getCalories).sum() + baseCalories) * XL_MULTIPLIER;
+            this.calories = (toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories) * XL_MULTIPLIER;
         } else {
-            this.calories = toppings.stream().mapToInt(Topping::getCalories).sum() + baseCalories;
+            this.calories = toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories;
         }
     }
 
