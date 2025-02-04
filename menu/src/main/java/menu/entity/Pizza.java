@@ -4,9 +4,11 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
+@NoArgsConstructor
 public class Pizza implements PriceAndCalories {
 
     private String name;
@@ -21,29 +23,20 @@ public class Pizza implements PriceAndCalories {
 
     private double XL_MULTIPLIER = 1.15;
 
-    public void setCalories() {
-        if (isXL) {
-            this.calories = (toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories) * XL_MULTIPLIER;
-        } else {
-            this.calories = toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories;
-        }
-    }
+    public Pizza(String name, List<Topping> toppings) {
+        this.name = name;
+        this.toppings = toppings;
 
-    public void setPrice() {
-        if (isXL) {
-            this.price = (toppings.stream().mapToDouble(Topping::getPrice).sum() + basePrice) * XL_MULTIPLIER;
-        } else {
-            this.price = toppings.stream().mapToDouble(Topping::getPrice).sum() + basePrice;
-        }
+        this.price = toppings.stream().mapToDouble(Topping::getPrice).sum() + basePrice;
+        this.calories = toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories;
     }
 
     public Pizza(String name, List<Topping> toppings, boolean isXL) {
         this.name = name;
         this.toppings = toppings;
-        this.isXL = isXL;
 
-        setPrice();
-        setCalories();
+        this.calories = (toppings.stream().mapToDouble(Topping::getCalories).sum() + baseCalories) * XL_MULTIPLIER;
+        this.price = (toppings.stream().mapToDouble(Topping::getPrice).sum() + basePrice) * XL_MULTIPLIER;
     }
 
     @Override

@@ -20,23 +20,20 @@ public class PizzaConfig {
     public Pizza pizzaMargerita() {
         return new Pizza(
                 "Margherita",
-                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.basil()),
-                false);
+                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.basil()));
     }
 
     public Pizza pizzaPepperoni() {
         return new Pizza(
                 "Pepperoni",
-                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.pepperoni()),
-                false);
+                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.pepperoni()));
     }
 
     @Bean
     public Pizza pizzaVegetarian() {
         return new Pizza(
                 "Vegetarian",
-                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.mushrooms(), toppings.basil()),
-                false);
+                Arrays.asList(toppings.tomato(), toppings.mozzarella(), toppings.mushrooms(), toppings.basil()));
     }
 
     @Bean

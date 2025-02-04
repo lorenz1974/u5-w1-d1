@@ -10,7 +10,6 @@ public class Topping implements PriceAndCalories {
     private double price;
     private double calories;
 
-    private boolean isXL;
     private double XL_MULTIPLIER = 1.15;
 
     public Topping(String name, double price, int calories) {

@@ -16,22 +16,22 @@ public class BeverageConfig {
 
     @Bean
     public Beverage tea() {
-        return new Beverage("Tea", 2.00, 2);
+        return new Beverage("Tea     ", 2.00, 2);
     }
 
     @Bean
     public Beverage juice() {
-        return new Beverage("Juice", 3.00, 50);
+        return new Beverage("Juice   ", 3.00, 50);
     }
 
     @Bean
     public Beverage water() {
-        return new Beverage("Water", 1.00, 0);
+        return new Beverage("Water   ", 1.00, 0);
     }
 
     @Bean
     public Beverage soda() {
-        return new Beverage("Soda", 2.00, 150);
+        return new Beverage("Soda    ", 2.00, 150);
     }
 
     @Bean
